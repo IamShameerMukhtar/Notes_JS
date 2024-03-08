@@ -3,5 +3,9 @@ border: 1px solid black;
 width: 80px;
 height: 80px;
 border-radius: 5px;
-background-color: aqua;
+
+}
+#b1{
+  width: 100px;
+  height: 100px;
 }

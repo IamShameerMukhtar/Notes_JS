@@ -170,7 +170,7 @@ return Pre*Next;
 })
 console.log(ArrayR);
 
-*/
+
 
 
 
@@ -195,7 +195,75 @@ else{
   
   console.log("Not same");
 }
+ 
+ console.log(Mydiv[2]);
+  */
+ 
+ 
+ buttons=document.querySelectorAll("#b1");
+ console.log(buttons);
+let sign="X";
+let count=2;
+ const Handleclick=()=>{
+   if(count%2==0){
+    sign="X";
+    count++;
+   }
+   else {
+    sign="0";
+    count++;
+   }
+  buttons[0].innerHTML=(sign);
+  buttons[0].disabled=true;
+ }
+ 
+ const Handleclick1=()=>{
+  if(count%2==0){
+    sign="X";
+    count++;
+   }
+   else {
+    sign="0";
+    count++;
+   }
+  buttons[1].innerHTML=(sign);
+  buttons[1].disabled=true;
+ }
+ 
+ 
+ const Handleclick2=()=>{
+  if(count%2==0){
+    sign="X";
+    count++;
 
-
-
+   }
+   else {
+    sign="0";
+    count++;
+   }
+  buttons[2].innerHTML=(sign);
+  buttons[2].disabled=true;
+  buttons[2].style.width="100px";
+  buttons[2].style.height="100px";
   
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ // Events In JS
+
