@@ -197,15 +197,20 @@ else{
 }
  
  console.log(Mydiv[2]);
-  */
  
+  */
+  // Events In JS
  
  buttons=document.querySelectorAll("#b1");
  console.log(buttons);
-let sign="X";
+let sign='0';
 let count=2;
- const Handleclick=()=>{
-   if(count%2==0){
+
+
+
+
+const Handleclick=()=>{
+   if(count%2==0 && sign=='0'){
     sign="X";
     count++;
    }
@@ -215,10 +220,19 @@ let count=2;
    }
   buttons[0].innerHTML=(sign);
   buttons[0].disabled=true;
+  buttons[0].style.width = "100%"; // Set the desired width
+  buttons[0].style.height = "100%"; // Set the desired height
  }
  
+
+
+
+
+// 2nd
+
+
  const Handleclick1=()=>{
-  if(count%2==0){
+  if(count%2==0 && sign=='0'){
     sign="X";
     count++;
    }
@@ -228,11 +242,17 @@ let count=2;
    }
   buttons[1].innerHTML=(sign);
   buttons[1].disabled=true;
- }
+  buttons[1].style.width = "100%"; // Set the desired width
+  buttons[1].style.height = "100%"; // Set the desired height
  
+ }
+
+
+
+ // 3rd
  
  const Handleclick2=()=>{
-  if(count%2==0){
+  if(count%2==0 && sign=='0'){
     sign="X";
     count++;
 
@@ -243,9 +263,8 @@ let count=2;
    }
   buttons[2].innerHTML=(sign);
   buttons[2].disabled=true;
-  buttons[2].style.width="100px";
-  buttons[2].style.height="100px";
-  
+  buttons[2].style.width = "100%"; // Set the desired width
+  buttons[2].style.height = "100%"; // Set the desired height
  }
  
  
@@ -260,10 +279,49 @@ let count=2;
  
  
  
+ handlediv=()=>{
+  alert("Hello world")
+ }
  
  
  
  
- 
- // Events In JS
 
+
+ Newbt= document.querySelector("#Newbt");
+ Newbt.addEventListener("click",()=>{
+alert("Hello");
+})
+
+
+mydiv=document.querySelector("#mydiv");
+//mydiv.addEventListener("click",handlediv())
+
+
+
+
+
+// practice Question
+//Toggle button for dark/light mode
+let mode;
+let body=document.querySelector("body");
+let Toggle=document.querySelector("#Toggle");
+Toggle.addEventListener("click",()=>{
+  
+if(mode==="Light"){
+  mode="Dark"
+  body.classList.add("light");
+  body.classList.remove("dark");
+  
+}
+else{
+  mode="Light"
+  body.classList.add("dark");
+  body.classList.remove("light");
+  
+ 
+  
+}
+
+console.log(mode);
+})
