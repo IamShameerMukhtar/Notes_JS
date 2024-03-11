@@ -5,9 +5,10 @@
 
 
 
-hello=()=>{
-document.getElementById("demo").innerHTML=("Hello form Shameer");}
+//hello=()=>{
 
+//document.getElementById("demo").innerHTML=("Hello form Shameer");
+//}
 /*
 // reverse number using %
 let b=123456;
@@ -198,7 +199,7 @@ else{
  
  console.log(Mydiv[2]);
  
-  */
+ 
   // Events In JS
  
  buttons=document.querySelectorAll("#b1");
@@ -325,3 +326,94 @@ else{
 
 console.log(mode);
 })
+ 
+
+
+
+
+
+
+// async await>>promise chains>>callback hell
+// Callbacks
+saymyname=()=>{
+  console.log("Shameer");
+}
+
+
+setTimeout(()=>{
+  console.log("My name is shameer");
+},5000)
+
+console.log("one");
+hello=()=>{
+console.log("Hello");
+}
+
+setTimeout(hello,2000); 
+setTimeout(()=>{
+  console.log("i am shameer")
+},2000); 
+console.log("2");
+
+
+function sum(a,b){
+  console.log(a+b);
+}
+ function cal(a,b,sumcallback){
+  sumcallback(a,b);
+
+ }
+cal(2,2,sum)
+
+
+*/
+
+
+
+
+
+function getData(dataId,getNextData){
+ 
+setTimeout(()=>{
+console.log("Data",dataId);
+if(getNextData){
+getNextData();
+
+}
+},2000)
+//Callback hell
+
+}
+console.log("Getting Data 1...");
+getData(1,()=>{
+  
+  console.log("Getting Data 2...");
+  getData(2,()=>{
+   
+    console.log("Getting Data 3...");
+    getData(3,()=>{
+    
+      console.log("Getting Data 4...");
+      getData(4,()=>{
+        console.log("Getting Data 5...");
+    getData(5)
+    
+  });
+});
+
+  })
+
+});
+
+
+
+
+ 
+
+
+
+
+
+
+
+
