@@ -366,10 +366,10 @@ function sum(a,b){
 cal(2,2,sum)
 
 
-*/
 
 
 
+                                                                                                                                                                                                                 
 
 
 function getData(dataId,getNextData){
@@ -408,7 +408,196 @@ getData(1,()=>{
 
 
 
+
+
+
+
+function showDelayedMessage(message, callback) {
+  setTimeout(() => {
+    console.log(message);
+    callback();
+  }, 1000); // Delay in milliseconds
+}
+
+showDelayedMessage("Hello, this is a delayed message.", () => {
+  console.log("This message shows up after the delay.");
+});
+
+
+
+
+
+
+
+function getd(id,callback){
+  setTimeout(()=>{
+
+console.log("Data",id)
+
+callback()
+
+  },3000)
+}
+getd(1,()=>{
+  getd(2,()=>{
+  console.log("Hello");  
+  })
+});
+
+
+
+
+*/
+
+
+
+// promises
+// promises are solution to callback hell:
+// promises have 3 states 1: fullfill 2: rejected 3:pending
+
+
+// function getData(dataId,nextdata){
+
+//   return new Promise((resolve,reject)=>{
+// setTimeout(()=>{
+// console.log(dataId,"data");
+// reject("Error");
+
+//   if(nextdata){
+//     nextdata();
+//   }
+// },5000)
+
+
+//   }
+// )}
+// let promise=getData(1);
+
+// promise.then() when promise fullfiled
+// promise.catch() when promise reject
+
+
+
+
+
+
+// const getPromise=()=>{
+//    return new Promise((resolve,reject)=>{
+//     console.log("I am a promise");
+//     reject("Error");
+    
+//     })
+
+//   }
+
+
+// let promise=getPromise();
+
+
+// promise.then((res)=>{
+// console.log("Promise Fullfiled"+res);
+
+// })
+
+// promise.catch((err)=>{
+// console.log("Error"+err);
+
+
+// })
+
+// promise chaining:
+
+
+// function async1(){
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//       console.log("data1:");
+//       resolve("Success");
+//         },2000)
+
+
+
+//   })
+  
+// }
+
+
+// function async2(){
+//   return new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//       console.log("data2:");
+//       resolve("Success");
+//         },2000)
+
+
+
+//   })
+  
+// }
+
+
+// console.log("Fetching data 1.....")
+// let p1=async1();
+// p1.then((res)=>{
+// console.log(res);
+
+// console.log("Fetching data 2.....")
+// let p2=async2();
+// p2.then((res)=>{
+// console.log(res);
+
+// })
+
+
+
+
+
+
+
+
+// })
+
+// Callback to promise Chaining
+
+function getData(dataId){
+ return new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+  console.log("Data",dataId);
+  resolve("Success");
+  },2000)
+  
+})
+  }
+  
+// promise chain means .then inside in .then 
+
+  console.log("Fetching Data 1");
+getData(1).then((res)=>{
+console.log(res);
+
+console.log("Fetching Data 2");
+getData(2).then((res)=>{
+  console.log(res);
+  
+  
+  console.log("Fetching Data 3");
+  getData(3).then((res)=>{
+    console.log(res);
+  })
+  
+
+
+
+  })
+
  
+
+
+})
+
+
+
+
 
 
 
