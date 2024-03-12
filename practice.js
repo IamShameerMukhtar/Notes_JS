@@ -555,45 +555,120 @@ getd(1,()=>{
 
 
 
+// // })
+
+// // Callback to promise Chaining
+
+// function getData(dataId){
+//  return new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//   console.log("Data",dataId);
+//   resolve("Success");
+//   },2000)
+  
 // })
-
-// Callback to promise Chaining
-
-function getData(dataId){
- return new Promise((resolve,reject)=>{
-  setTimeout(()=>{
-  console.log("Data",dataId);
-  resolve("Success");
-  },2000)
+//   }
   
-})
-  }
-  
-// promise chain means .then inside in .then 
+// // promise chain means .then inside in .then 
 
-  console.log("Fetching Data 1");
-getData(1).then((res)=>{
-console.log(res);
+//   console.log("Fetching Data 1");
+// getData(1).then((res)=>{
+// console.log(res);
 
-console.log("Fetching Data 2");
-getData(2).then((res)=>{
-  console.log(res);
+// console.log("Fetching Data 2");
+// getData(2).then((res)=>{
+//   console.log(res);
   
   
-  console.log("Fetching Data 3");
-  getData(3).then((res)=>{
-    console.log(res);
-  })
+//   console.log("Fetching Data 3");
+//   getData(3).then((res)=>{
+//     console.log(res);
+//   })
   
 
 
 
-  })
+//   })
 
  
 
 
-})
+// })
+
+
+
+
+// promise chain also difficult to understand so we can use async-await instead of it:
+
+
+// Async-Await:
+// when u write async with a function it means it will returns a promise:
+
+
+
+
+
+// function api(){
+//   return new Promise((resolve,reject)=>{
+// setTimeout(()=>{
+// console.log("Weather Data");
+// resolve(200);
+
+
+
+// },2000)
+//   })
+// }
+
+// async function callApi(){
+//   await api(); //1st time
+//   await api(); // 2nd time
+//   await api(); // 3rd time
+// }
+
+
+// callApi();
+
+
+// 1 program 3 concepts
+
+// Callbacks
+
+
+
+// function getData(dataId,getNextData){
+ 
+//   setTimeout(()=>{
+//   console.log("Data",dataId);
+//   if(getNextData){
+//   getNextData();
+  
+//   }
+//   },2000)
+//   //Callback hell
+  
+//   }
+//   console.log("Getting Data 1...");
+//   getData(1,()=>{
+    
+//     console.log("Getting Data 2...");
+//     getData(2,()=>{
+     
+//       console.log("Getting Data 3...");
+//       getData(3,()=>{
+      
+//         console.log("Getting Data 4...");
+//         getData(4,()=>{
+//           console.log("Getting Data 5...");
+//       getData(5)
+      
+//     });
+//   });
+  
+//     })
+  
+//   });
+  
 
 
 
@@ -606,3 +681,69 @@ getData(2).then((res)=>{
 
 
 
+
+
+
+
+
+// promise
+// function getData(dataId){
+//  return new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//   console.log("Data",dataId);
+//   resolve("Success");
+//   },2000)
+  
+// })
+//   }
+  
+ 
+
+//   console.log("Fetching Data 1");
+// getData(1).then((res)=>{
+// console.log(res);
+
+// console.log("Fetching Data 2");
+// getData(2).then((res)=>{
+//   console.log(res);
+  
+  
+//   console.log("Fetching Data 3");
+//   getData(3).then((res)=>{
+//     console.log(res);
+//   })
+  
+
+
+
+//   })
+
+ 
+
+
+// })
+
+
+// sync-await
+async function getData(dataId){
+   return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+    console.log("Data",dataId);
+    resolve("Success");
+    },2000)
+    
+  })
+    }
+   async function AwaitData(){
+    console.log("Fetching Data 1.....");
+    await getData(1);
+    console.log("Fetching Data 1.....")
+    
+  await getData(2);
+  console.log("Fetching Data 1.....")
+  await getData(3);
+  console.log("Fetching Data 1.....")
+  await getData(4);
+  console.log("Fetching Data 1.....")
+
+    }
