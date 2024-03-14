@@ -686,7 +686,7 @@ getd(1,()=>{
 
 
 
-// promise
+// // promise
 // function getData(dataId){
 //  return new Promise((resolve,reject)=>{
 //   setTimeout(()=>{
@@ -721,29 +721,36 @@ getd(1,()=>{
  
 
 
-// })
+// // })
 
 
-// sync-await
-async function getData(dataId){
-   return new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-    console.log("Data",dataId);
-    resolve("Success");
-    },2000)
+// // sync-await
+// async function getData(dataId){
+//    return new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//     console.log("Data",dataId);
+//     resolve("Success");
+//     },2000)
     
-  })
-    }
-   async function AwaitData(){
-    console.log("Fetching Data 1.....");
-    await getData(1);
-    console.log("Fetching Data 1.....")
+//   })
+//     }
+//    async function AwaitData(){
+//     console.log("Fetching Data 1.....");
+//     await getData(1);
+//     console.log("Fetching Data 1.....")
     
-  await getData(2);
-  console.log("Fetching Data 1.....")
-  await getData(3);
-  console.log("Fetching Data 1.....")
-  await getData(4);
-  console.log("Fetching Data 1.....")
+//   await getData(2);
+//   console.log("Fetching Data 1.....")
+//   await getData(3);
+//   console.log("Fetching Data 1.....")
+//   await getData(4);
+//   console.log("Fetching Data 1.....")
 
-    }
+//     }
+
+
+
+
+
+
+
